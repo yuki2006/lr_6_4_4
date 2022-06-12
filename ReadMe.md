@@ -1,6 +1,6 @@
 The code in section 6.4.4 of "Learning React 2nd edition" by Alex Banks and Eve Porcello, written in TypeScript.
 
-
+<br>
 
 A little bit characteristic code here is probably the part in *src/components/ColorProvider.tsx*.
 
@@ -10,4 +10,4 @@ In my code, *ColorContext* is declared with **let** in the global scope, and the
 
 If the closure variable has an infinite extent, as in Common Lisp, it might be better to declare the variable *ColorContext* with **const** in the definition of the *ColorProvider* function and assign the return value of *createContext* as initialization (it probably needs to rewrite the implementation of *useColors*). However, since I am not familiar with the JavaScript specification, I did not do so this time.
 
-In addition, since React v18, the default value of the context must be given as a required argument to *createContext* (because of convenience for testing). In TypeScript, this default value and the initial value abovee must have consistent type. I would like to say that, it took some trail and error to seek better way to write it.
+In addition, since React v18, the default value of the context must be given as a required argument to *createContext* (because of convenience for testing). In TypeScript, this default value and the initial value above must have consistent type. I would like to say that, it took some trail and error to seek better way to write it.
