@@ -10,22 +10,6 @@ export type ColorDataTyp = {
 };
 const initialColorDataList = getInitialColorDataList()
 
-/*
-type VoidFn1Typ = (a:any)=>void
-function VoidFn1 (a:undefined) {}
-type VoidFn2Typ = (a:any,b:any)=>void
-function VoidFn2 (a:undefined,b:undefined) {}
-export type ColorContextTyp = { 
-  colors: ColorDataTyp[]; 
-  addColor: VoidFn2Typ, rateColor: VoidFn2Typ, removeColor: VoidFn1Typ; 
-}
-export const ColorContext : React.Context<ColorContextTyp> = createContext({
-  colors: initialColorDataList, 
-  // the following property values are silly workarounds to suppress typecheker warnings
-  addColor: VoidFn2, rateColor: VoidFn2, removeColor: VoidFn1
-})
-*/
-
 export type ColorContextTyp = { 
   colors: ColorDataTyp[]; 
   addColor: (a:string,b:string)=>void, 
@@ -33,13 +17,6 @@ export type ColorContextTyp = {
   removeColor: (a:string)=>void
 }
 export let ColorContext : React.Context<ColorContextTyp>;
-/*
-createContext({
-  colors: initialColorDataList, 
-  // the following property values are silly workarounds to suppress typecheker warnings
-  addColor: VoidFn2, rateColor: VoidFn2, removeColor: VoidFn1
-})
-*/
 
 type Props = {
   children: React.ReactNode;
