@@ -1,4 +1,4 @@
-The code in section 6.4.4 of "Learning React 2nd edition" by Alex Banks and Eve Porcello, written in TypeScript.
+The code in section 6.4.4 of "Learning React 2nd edition" by Alex Banks and Eve Porcello, written in TypeScript by me:
 
 <br>
 
