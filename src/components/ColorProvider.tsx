@@ -10,9 +10,9 @@ export type ColorDataTyp = {
 };
 const initialColorDataList = getInitialColorDataList()
 
-export type ColorContextTyp = { 
-  colors: ColorDataTyp[]; 
-  addColor: (a:string,b:string)=>void, 
+export type ColorContextTyp = {
+  colors: ColorDataTyp[];
+  addColor: (a:string,b:string)=>void,
   rateColor: (a:string,b:number)=>void
   removeColor: (a:string)=>void
 }
@@ -25,7 +25,7 @@ export type ColorContextTyp = {
 // (letの宣言と、createContextによる代入やColor.Provierに対するvalue属性の
 //  型が整合していないと怒られてしまう)
 //
-export let ColorContext : React.Context<ColorContextTyp>;
+export const ColorContext = createContext<ColorContextTyp>({ colors: [], addColor: () => { }, rateColor: () => { }, removeColor: () => { } });
 
 
 type Props = {
@@ -69,7 +69,6 @@ export const ColorProvider : FC<Props> = (props: Props) => {
   //   オリジナル本の時点ではcreateContextは引数を取らない。また、コードはJSで
   //   記述されており、全体として型整合しているコードは示されていない
   //
-  ColorContext = createContext({ colors, addColor, rateColor, removeColor })
 
 
   // Context.Providerに対する以下のvalue属性は必須であり、createContextに与える
